@@ -1,0 +1,100 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="component_event" id="ev1" x="20" y="20">
+    <mutation component_type="Button" is_generic="false" instance_name="ButtonGambar" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">ButtonGambar</field>
+    <statement name="DO">
+      <block type="component_set_get" id="s0">
+        <mutation component_type="Player" set_or_get="set" property_name="Source" is_generic="false" instance_name="Player1"></mutation>
+        <field name="COMPONENT_SELECTOR">Player1</field>
+        <field name="PROP">Source</field>
+        <value name="VALUE"><block type="text" id="t0"><field name="TEXT">motivasi.mp3</field></block></value>
+        <next>
+      <block type="component_method" id="m1">
+        <mutation component_type="Player" method_name="Start" is_generic="false" instance_name="Player1"></mutation>
+        <field name="COMPONENT_SELECTOR">Player1</field>
+        <next>
+          <block type="component_set_get" id="s1">
+            <mutation component_type="Form" set_or_get="set" property_name="BackgroundColor" is_generic="false" instance_name="Screen1"></mutation>
+            <field name="COMPONENT_SELECTOR">Screen1</field>
+            <field name="PROP">BackgroundColor</field>
+            <value name="VALUE"><block type="color_green" id="c1"><field name="COLOR">#00ff00</field></block></value>
+            <next>
+              <block type="component_set_get" id="s2">
+                <mutation component_type="Label" set_or_get="set" property_name="Text" is_generic="false" instance_name="LabelStatus"></mutation>
+                <field name="COMPONENT_SELECTOR">LabelStatus</field>
+                <field name="PROP">Text</field>
+                <value name="VALUE"><block type="text" id="t1"><field name="TEXT">Sedang memutar motivasi... 🎧</field></block></value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="ev2" x="20" y="320">
+    <mutation component_type="Button" is_generic="false" instance_name="ButtonStop" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">ButtonStop</field>
+    <statement name="DO">
+      <block type="component_method" id="m2">
+        <mutation component_type="Player" method_name="Pause" is_generic="false" instance_name="Player1"></mutation>
+        <field name="COMPONENT_SELECTOR">Player1</field>
+        <next>
+          <block type="component_set_get" id="s3">
+            <mutation component_type="Form" set_or_get="set" property_name="BackgroundColor" is_generic="false" instance_name="Screen1"></mutation>
+            <field name="COMPONENT_SELECTOR">Screen1</field>
+            <field name="PROP">BackgroundColor</field>
+            <value name="VALUE"><block type="color_yellow" id="c2"><field name="COLOR">#ffff00</field></block></value>
+            <next>
+              <block type="component_set_get" id="s4">
+                <mutation component_type="Label" set_or_get="set" property_name="Text" is_generic="false" instance_name="LabelStatus"></mutation>
+                <field name="COMPONENT_SELECTOR">LabelStatus</field>
+                <field name="PROP">Text</field>
+                <value name="VALUE"><block type="text" id="t2"><field name="TEXT">Dihentikan. Ketuk gambar lagi 😊</field></block></value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="ev3" x="20" y="620">
+    <mutation component_type="Player" is_generic="false" instance_name="Player1" event_name="Completed"></mutation>
+    <field name="COMPONENT_SELECTOR">Player1</field>
+    <statement name="DO">
+      <block type="component_set_get" id="s5">
+        <mutation component_type="Form" set_or_get="set" property_name="BackgroundColor" is_generic="false" instance_name="Screen1"></mutation>
+        <field name="COMPONENT_SELECTOR">Screen1</field>
+        <field name="PROP">BackgroundColor</field>
+        <value name="VALUE"><block type="color_pink" id="c3"><field name="COLOR">#ffafaf</field></block></value>
+        <next>
+          <block type="component_set_get" id="s6">
+            <mutation component_type="Label" set_or_get="set" property_name="Text" is_generic="false" instance_name="LabelStatus"></mutation>
+            <field name="COMPONENT_SELECTOR">LabelStatus</field>
+            <field name="PROP">Text</field>
+            <value name="VALUE"><block type="text" id="t3"><field name="TEXT">Selesai! Tetap bahagia ya 💖</field></block></value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="ev4" x="20" y="820">
+    <mutation component_type="Form" is_generic="false" instance_name="Screen1" event_name="ErrorOccurred"></mutation>
+    <field name="COMPONENT_SELECTOR">Screen1</field>
+    <statement name="DO">
+      <block type="component_method" id="m3">
+        <mutation component_type="Notifier" method_name="ShowAlert" is_generic="false" instance_name="Notifier1"></mutation>
+        <field name="COMPONENT_SELECTOR">Notifier1</field>
+        <value name="ARG0">
+          <block type="text_join" id="j1">
+            <mutation items="2"></mutation>
+            <value name="ADD0"><block type="text" id="t4"><field name="TEXT">Error: </field></block></value>
+            <value name="ADD1"><block type="lexical_variable_get" id="g1"><field name="VAR">message</field></block></value>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <yacodeblocks ya-version="232" language-version="37"></yacodeblocks>
+</xml>
