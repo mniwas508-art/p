@@ -3,6 +3,12 @@
     <mutation component_type="Button" is_generic="false" instance_name="ButtonGambar" event_name="Click"></mutation>
     <field name="COMPONENT_SELECTOR">ButtonGambar</field>
     <statement name="DO">
+      <block type="component_set_get" id="s0">
+        <mutation component_type="Player" set_or_get="set" property_name="Source" is_generic="false" instance_name="Player1"></mutation>
+        <field name="COMPONENT_SELECTOR">Player1</field>
+        <field name="PROP">Source</field>
+        <value name="VALUE"><block type="text" id="t0"><field name="TEXT">motivasi.mp3</field></block></value>
+        <next>
       <block type="component_method" id="m1">
         <mutation component_type="Player" method_name="Start" is_generic="false" instance_name="Player1"></mutation>
         <field name="COMPONENT_SELECTOR">Player1</field>
@@ -21,6 +27,8 @@
               </block>
             </next>
           </block>
+        </next>
+      </block>
         </next>
       </block>
     </statement>
@@ -68,6 +76,23 @@
             <value name="VALUE"><block type="text" id="t3"><field name="TEXT">Selesai! Tetap bahagia ya 💖</field></block></value>
           </block>
         </next>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="ev4" x="20" y="820">
+    <mutation component_type="Form" is_generic="false" instance_name="Screen1" event_name="ErrorOccurred"></mutation>
+    <field name="COMPONENT_SELECTOR">Screen1</field>
+    <statement name="DO">
+      <block type="component_method" id="m3">
+        <mutation component_type="Notifier" method_name="ShowAlert" is_generic="false" instance_name="Notifier1"></mutation>
+        <field name="COMPONENT_SELECTOR">Notifier1</field>
+        <value name="ARG0">
+          <block type="text_join" id="j1">
+            <mutation items="2"></mutation>
+            <value name="ADD0"><block type="text" id="t4"><field name="TEXT">Error: </field></block></value>
+            <value name="ADD1"><block type="lexical_variable_get" id="g1"><field name="VAR">message</field></block></value>
+          </block>
+        </value>
       </block>
     </statement>
   </block>

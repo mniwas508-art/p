@@ -10,6 +10,7 @@ $JSON
 {"$Name":"LabelStatus","$Type":"Label","$Version":"5","BackgroundColor":"&HFF8BC34A","FontBold":"True","FontSize":"16","Text":"Siap memutar \u2728","TextAlignment":"1","TextColor":"&HFFFFFFFF","Width":"-2","Uuid":"1007"},
 {"$Name":"LabelSpasi4","$Type":"Label","$Version":"5","Text":"","Height":"10","Uuid":"1008"},
 {"$Name":"ButtonStop","$Type":"Button","$Version":"7","BackgroundColor":"&HFFFF0000","FontBold":"True","Shape":"1","Text":"\u23f9  Berhenti","TextColor":"&HFFFFFFFF","Width":"-2","Uuid":"1009"},
-{"$Name":"Player1","$Type":"Player","$Version":"6","Source":"motivasi.mp3","Uuid":"1010"}
+{"$Name":"Player1","$Type":"Player","$Version":"6","Source":"motivasi.mp3","Uuid":"1010"},
+{"$Name":"Notifier1","$Type":"Notifier","$Version":"6","Uuid":"1011"}
 ]}}
 |#
